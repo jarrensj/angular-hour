@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
   hobbies:string[];
   hello:any;
   posts: Post[];
+  isEdit:boolean = false;
 
   constructor(private dataService:DataService) { }
 
@@ -49,6 +50,10 @@ export class UserComponent implements OnInit {
         this.hobbies.splice(i,1);
       }
     }
+  }
+
+  toggleEdit(){
+    this.isEdit = !this.isEdit;
   }
 
 }

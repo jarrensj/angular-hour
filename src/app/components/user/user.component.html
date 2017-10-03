@@ -6,34 +6,39 @@
 </ul>
 
 <button (click) = "onClick()">Click me</button>
+<button (click) = "toggleEdit()">Edit User </button>
 
-<h1> Edit User </h1>
-<form>
-  <div>
-    <label for ="name"> Name: </label><br>
-    <input type = "text" [(ngModel)] = "name" name = "name">
-  </div>
-  <div>
-    <label for ="age"> age: </label><br>
-    <input type = "text" [(ngModel)] = "age" name = "age">
-  </div>
-  <div>
-    <label for ="email"> email: </label><br>
-    <input type = "text" [(ngModel)] = "email" name = "email">
-  </div>
-  <div>
-    <label for ="street"> street: </label><br>
-    <input type = "text" [(ngModel)] = "address.street" name = "street">
-  </div>
-  <div>
-    <label for ="city"> city: </label><br>
-    <input type = "text" [(ngModel)] = "address.city" name = "city">
-  </div>
-  <div>
-    <label for ="state"> state: </label><br>
-    <input type = "text" [(ngModel)] = "address.state" name = "state">
-  </div>
-</form>
+
+<div *ngIf=isEdit>
+  <h1> Edit User </h1>
+  <form>
+    <div>
+      <label for ="name"> Name: </label><br>
+      <input type = "text" [(ngModel)] = "name" name = "name">
+    </div>
+    <div>
+      <label for ="age"> age: </label><br>
+      <input type = "text" [(ngModel)] = "age" name = "age">
+    </div>
+    <div>
+      <label for ="email"> email: </label><br>
+      <input type = "text" [(ngModel)] = "email" name = "email">
+    </div>
+    <div>
+      <label for ="street"> street: </label><br>
+      <input type = "text" [(ngModel)] = "address.street" name = "street">
+    </div>
+    <div>
+      <label for ="city"> city: </label><br>
+      <input type = "text" [(ngModel)] = "address.city" name = "city">
+    </div>
+    <div>
+      <label for ="state"> state: </label><br>
+      <input type = "text" [(ngModel)] = "address.state" name = "state">
+    </div>
+  </form>
+</div>
+
 
 <h1> hobbies </h1>
 <form (submit) = "addHobby(hobby.value)">
